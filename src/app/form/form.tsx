@@ -20,7 +20,7 @@ const Form = () => {
         <Typography level="title-md">Primária</Typography>
         <Link href={"/home"}>
           <Button variant="soft" color="primary">
-            Retorne a home
+            Retorne
           </Button>
         </Link>
         <Link href={"/home"}>
