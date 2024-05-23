@@ -25,6 +25,7 @@ export default function ThemeRegistry({ children }: { children: ReactNode }) {
               justifyContent: "center",
               padding: 2,
               marginTop: "100px",
+              marginBottom: "170px",
             }}
           >
             <Box sx={{ width: "100%", maxWidth: "1200px" }}>{children}</Box>
