@@ -5,8 +5,8 @@ const Form = () => {
   return (
     <Box
       display={"flex"}
+      flexDirection={{ xs: "column", md: "row" }}
       justifyContent={"center"}
-      height={"100vh"}
       alignItems={"center"}
       gap={2}
     >
@@ -20,7 +20,7 @@ const Form = () => {
         <Typography level="title-md">Primária</Typography>
         <Link href={"/home"}>
           <Button variant="soft" color="primary">
-            Retorne
+            Retorne a home
           </Button>
         </Link>
         <Link href={"/home"}>
