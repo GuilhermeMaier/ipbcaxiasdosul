@@ -1,5 +1,5 @@
 "use client";
-import { CssBaseline, Sheet } from "@mui/joy";
+import { Box, CssBaseline } from "@mui/joy";
 import { CssVarsProvider, getInitColorSchemeScript } from "@mui/joy/styles";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
@@ -17,7 +17,18 @@ export default function ThemeRegistry({ children }: { children: ReactNode }) {
         <body className={inter.className}>
           {getInitColorSchemeScript({ defaultMode: "system" })}
           <Header />
-          <Sheet>{children}</Sheet>
+          <Box
+            sx={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              padding: 2,
+              marginTop: "100px",
+            }}
+          >
+            <Box sx={{ width: "100%", maxWidth: "1200px" }}>{children}</Box>
+          </Box>
           <Footer />
         </body>
       </CssVarsProvider>

@@ -1,37 +1,48 @@
 "use client";
 import { Avatar, Box, Sheet } from "@mui/joy";
-import { useColorScheme } from "@mui/joy/styles";
 import ThemeToggle from "../themeToggle";
 
 export default function Header() {
-  const { mode } = useColorScheme();
   return (
     <Sheet
       variant="solid"
       color="primary"
       component={"header"}
       sx={{
+        width: "100%",
         display: "flex",
-        justifyContent: "space-between",
-        padding: 1,
+        justifyContent: "center",
+        position: "fixed",
+        top: 0,
+        right: 0,
+        left: 0,
+        zIndex: 9,
       }}
     >
-      <Box>
-        <Avatar
-          src={
-            mode === "light"
-              ? "/images/l-horizontal_bege.png"
-              : "/images/l-horizontal_preto.png"
-          }
-          alt="Logo"
-          sx={{
-            background: "transparent",
-            width: "fit-content",
-            borderRadius: 0,
-          }}
-        />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+          maxWidth: "1200px",
+          height: "100px",
+          padding: 1,
+        }}
+      >
+        <Box>
+          <Avatar
+            src="/images/l-horizontal_bege.png"
+            alt="Logo"
+            sx={{
+              background: "transparent",
+              width: "fit-content",
+              height: "-webkit-fill-available",
+              borderRadius: 0,
+            }}
+          />
+        </Box>
+        <ThemeToggle />
       </Box>
-      <ThemeToggle />
     </Sheet>
   );
 }

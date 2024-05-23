@@ -1,10 +1,7 @@
 "use client";
 import { Avatar, Box, Sheet } from "@mui/joy";
-import { useColorScheme } from "@mui/joy/styles";
-import ThemeToggle from "../themeToggle";
 
 export default function Footer() {
-  const { mode } = useColorScheme();
   return (
     <Sheet
       variant="solid"
@@ -12,26 +9,32 @@ export default function Footer() {
       component={"footer"}
       sx={{
         display: "flex",
-        justifyContent: "space-between",
-        padding: 1,
+        justifyContent: "center",
       }}
     >
-      <Box>
-        <Avatar
-          src={
-            mode === "light"
-              ? "/images/l-horizontal_bege.png"
-              : "/images/l-horizontal_preto.png"
-          }
-          alt="Logo"
-          sx={{
-            background: "transparent",
-            width: "fit-content",
-            borderRadius: 0,
-          }}
-        />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          maxWidth: "1200px",
+          height: "170px",
+          padding: 2,
+        }}
+      >
+        <Box>
+          <Avatar
+            src={"/images/l-vertical_bege.png"}
+            alt="Logo"
+            sx={{
+              background: "transparent",
+              width: "fit-content",
+              height: "-webkit-fill-available",
+              borderRadius: 0,
+            }}
+          />
+        </Box>
       </Box>
-      <ThemeToggle />
     </Sheet>
   );
 }

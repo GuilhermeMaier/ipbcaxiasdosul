@@ -3,12 +3,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <Box
-      display={"flex"}
-      justifyContent={"center"}
-      height={"100vh"}
-      alignItems={"center"}
-    >
+    <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
       <Card variant="plain">
         <Link href={"/form"}>
           <Button variant="solid" color="primary">

@@ -14,3 +14,26 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b4b4b4;
+  border-radius: 8px;
+  border: 1px solid #989898;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #989898;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
