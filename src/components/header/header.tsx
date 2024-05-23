@@ -9,12 +9,11 @@ export default function Header() {
       color="primary"
       component={"header"}
       sx={{
-        width: "100%",
         display: "flex",
         justifyContent: "center",
         position: "fixed",
         top: 0,
-        right: 0,
+        right: "7px",
         left: 0,
         zIndex: 9,
       }}

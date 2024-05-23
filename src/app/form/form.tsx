@@ -1,13 +1,14 @@
 import { Box, Button, Divider, Typography } from "@mui/joy";
 import Link from "next/link";
 
-const Form = () => {
+function Form() {
   return (
     <Box
       display={"flex"}
       flexDirection={{ xs: "column", md: "row" }}
       justifyContent={"center"}
       alignItems={"center"}
+      height={"100%"}
       gap={2}
     >
       <Divider orientation="vertical" />
@@ -161,6 +162,6 @@ const Form = () => {
       <Divider orientation="vertical" />
     </Box>
   );
-};
+}
 
 export default Form;
