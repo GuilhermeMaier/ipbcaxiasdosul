@@ -13,7 +13,7 @@ export default function Header() {
         justifyContent: "center",
         position: "fixed",
         top: 0,
-        right: "7px",
+        right: 0,
         left: 0,
         zIndex: 9,
       }}
