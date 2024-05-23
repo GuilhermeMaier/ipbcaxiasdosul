@@ -20,13 +20,12 @@ export default function ThemeToggle() {
   return (
     <Tooltip title={"Esquema de cores"} arrow size="sm">
       <Switch
+        size="md"
+        color="neutral"
         sx={{
-          position: "fixed",
-          top: "4px",
-          right: "4px",
-          "--Switch-thumbSize": "21px",
-          "--Switch-trackWidth": "45px",
-          "--Switch-trackHeight": "25px",
+          // "--Switch-thumbSize": "21px",
+          "--Switch-trackWidth": "35px",
+          // "--Switch-trackHeight": "25px",
           [`& .${switchClasses.thumb}`]: {
             transition: "width 0.2s, left 0.2s",
           },
@@ -37,6 +36,7 @@ export default function ThemeToggle() {
               mode === "light" ? (
                 <IconButton
                   color="warning"
+                  size="sm"
                   sx={{ pointerEvents: "none", padding: 0 }}
                 >
                   <MdBrightnessHigh />
@@ -44,6 +44,7 @@ export default function ThemeToggle() {
               ) : (
                 <IconButton
                   color="primary"
+                  size="sm"
                   sx={{ pointerEvents: "none", padding: 0 }}
                 >
                   <MdDarkMode />
