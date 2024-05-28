@@ -1,16 +1,17 @@
-import { Box, Button, Card } from "@mui/joy";
-import Link from "next/link";
+import Building from "@/components/building";
+import { Box } from "@mui/joy";
 
 const Home = () => {
   return (
-    <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
-      <Card variant="plain">
-        <Link href={"/form"}>
-          <Button variant="solid" color="primary">
-            Vá até o formulário
-          </Button>
-        </Link>
-      </Card>
+    <Box
+      display={"flex"}
+      flexDirection={{ xs: "column", md: "row" }}
+      justifyContent={"center"}
+      alignItems={"center"}
+      height={"100%"}
+      gap={2}
+    >
+      <Building />
     </Box>
   );
 };
