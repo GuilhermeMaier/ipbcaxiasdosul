@@ -203,6 +203,9 @@ export default function Footer() {
               {churchData.phone}
             </Typography>
           </Box>
+          {useMedia(`(max-width: ${theme.breakpoints.values.md}px)`, false) && (
+            <Divider orientation="horizontal" />
+          )}
         </Box>
         <Box sx={footerStyles.avatarContainer}>
           <Avatar
