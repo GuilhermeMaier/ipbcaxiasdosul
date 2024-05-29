@@ -3,15 +3,24 @@ import {
   Avatar,
   Box,
   Divider,
-  Grid,
   List,
   ListItem,
   ListSubheader,
   Sheet,
   Typography,
 } from "@mui/joy";
+import { useMedia } from "react-use";
+import theme from "../themeRegistry/theme";
 import { ChurchData } from "./footer.dto";
 import { footerStyles } from "./footer.styles";
+
+function FooterDivider() {
+  return useMedia(`(max-width: ${theme.breakpoints.values.md}px)`, false) ? (
+    <Divider orientation="horizontal" />
+  ) : (
+    <Divider orientation="vertical" />
+  );
+}
 
 export default function Footer() {
   const churchData: ChurchData = {
@@ -101,6 +110,7 @@ export default function Footer() {
       },
     ],
   };
+  console.log(theme.breakpoints.values.md);
   return (
     <Sheet
       variant="solid"
@@ -111,45 +121,50 @@ export default function Footer() {
         justifyContent: "center",
       }}
     >
-      <Grid
-        container
-        spacing={2}
+      <Box
         sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-between",
           width: "100%",
           maxWidth: "1200px",
-          flexGrow: 1,
-          margin: 0,
-          padding: 2,
+          padding: { xs: 4, md: 2 },
+          gap: { xs: 4, md: 2 },
         }}
       >
-        <Grid sx={footerStyles.avatarContainer} md={2} sm={12}>
+        <Box sx={footerStyles.avatarContainer}>
           <Avatar
             src={"/images/l-vertical_bege.png"}
             alt="Logo"
             sx={footerStyles.avatar}
           />
-        </Grid>
-        <Grid
+        </Box>
+        <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             gap: 2,
           }}
-          md={"auto"}
-          sm={12}
         >
           <Box
             sx={{
               display: "flex",
               gap: 2,
-              flexDirection: { sm: "column", md: "row" },
+              flexDirection: { xs: "column", md: "row" },
             }}
           >
-            <Divider orientation={"vertical"} />
+            <FooterDivider />
             {churchData.boards.map((board, index) => (
-              <Box key={board.id} sx={{ display: "flex", gap: 2 }}>
+              <Box
+                key={board.id}
+                sx={{
+                  display: "flex",
+                  flexDirection: { xs: "column", md: "row" },
+                  alignItems: "center",
+                  gap: 2,
+                }}
+              >
                 <List sx={footerStyles.list}>
                   <ListSubheader>
                     <Typography level="body-md" textColor="common.white">
@@ -164,34 +179,10 @@ export default function Footer() {
                     </ListItem>
                   ))}
                 </List>
-                <Divider orientation="vertical" />
+                <FooterDivider />
               </Box>
             ))}
           </Box>
-          {/* <Box
-            sx={{
-              display: "flex",
-              gap: 1,
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <List sx={footerStyles.list}>
-              <ListSubheader>
-                <Typography level="body-md" textColor="common.white">
-                  Programação
-                </Typography>
-              </ListSubheader>
-              {churchData.events.map((event) => (
-                <ListItem key={event.id}>
-                  <Typography level="body-md" textColor="common.white">
-                    {event.name}: {event.time}
-                  </Typography>
-                </ListItem>
-              ))}
-            </List>
-          </Box> */}
           <Box
             sx={{
               display: "flex",
@@ -212,15 +203,15 @@ export default function Footer() {
               {churchData.phone}
             </Typography>
           </Box>
-        </Grid>
-        <Grid sx={footerStyles.avatarContainer} md={2} sm={12}>
+        </Box>
+        <Box sx={footerStyles.avatarContainer}>
           <Avatar
             src={"/images/logo-ipb-branco.png"}
             alt="Logo"
             sx={footerStyles.avatar}
           />
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Sheet>
   );
 }

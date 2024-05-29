@@ -4,12 +4,13 @@ export const footerStyles = SXStyleMaker({
   avatarContainer: {
     display: "flex",
     justifyContent: "center",
-    // padding: 2,
+    width: { xs: "100%", md: "15%" },
+    height: { xs: "auto", md: "100%" },
   },
   avatar: {
     background: "transparent",
     position: "relative",
-    width: "100%",
+    width: { xs: "50%", md: "100%" },
     height: "auto",
     borderRadius: 0,
     img: {
@@ -17,6 +18,7 @@ export const footerStyles = SXStyleMaker({
     },
   },
   list: {
+    alignItems: { xs: "center", md: "flex-start" },
     ".MuiListSubheader-root": {
       paddingLeft: 0,
     },
