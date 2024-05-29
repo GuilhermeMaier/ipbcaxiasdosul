@@ -33,18 +33,18 @@ export default function Footer() {
         members: [
           {
             id: 1,
-            role: "Reverendo",
+            role: "Presidente",
             name: "Silvânio Matias",
           },
           {
             id: 2,
-            role: "Presbítero",
-            name: "Marlon Vargas",
+            role: "Vice-Presidente",
+            name: "Paulo Alves",
           },
           {
             id: 3,
-            role: "Presbítero",
-            name: "Paulo Alves",
+            role: "Secretário",
+            name: "Marlon Vargas",
           },
         ],
       },
@@ -110,7 +110,6 @@ export default function Footer() {
       },
     ],
   };
-  console.log(theme.breakpoints.values.md);
   return (
     <Sheet
       variant="solid"
