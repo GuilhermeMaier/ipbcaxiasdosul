@@ -3,6 +3,7 @@ import {
   Avatar,
   Box,
   Divider,
+  Grid,
   List,
   ListItem,
   ListSubheader,
@@ -110,37 +111,40 @@ export default function Footer() {
         justifyContent: "center",
       }}
     >
-      <Box
+      <Grid
+        container
+        spacing={2}
         sx={{
-          display: "flex",
-          flexDirection: { md: "row", sm: "column" },
           justifyContent: "space-between",
           width: "100%",
           maxWidth: "1200px",
+          flexGrow: 1,
+          margin: 0,
           padding: 2,
-          gap: 2,
         }}
       >
-        <Box sx={footerStyles.avatarContainer}>
+        <Grid sx={footerStyles.avatarContainer} md={2} sm={12}>
           <Avatar
             src={"/images/l-vertical_bege.png"}
             alt="Logo"
             sx={footerStyles.avatar}
           />
-        </Box>
-        <Box
+        </Grid>
+        <Grid
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             gap: 2,
           }}
+          md={"auto"}
+          sm={12}
         >
           <Box
             sx={{
               display: "flex",
               gap: 2,
-              flexDirection: { md: "row", sm: "column" },
+              flexDirection: { sm: "column", md: "row" },
             }}
           >
             <Divider orientation={"vertical"} />
@@ -208,15 +212,15 @@ export default function Footer() {
               {churchData.phone}
             </Typography>
           </Box>
-        </Box>
-        <Box sx={footerStyles.avatarContainer}>
+        </Grid>
+        <Grid sx={footerStyles.avatarContainer} md={2} sm={12}>
           <Avatar
             src={"/images/logo-ipb-branco.png"}
             alt="Logo"
             sx={footerStyles.avatar}
           />
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
     </Sheet>
   );
 }

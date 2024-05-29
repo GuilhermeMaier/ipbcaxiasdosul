@@ -4,8 +4,7 @@ export const footerStyles = SXStyleMaker({
   avatarContainer: {
     display: "flex",
     justifyContent: "center",
-    width: { md: "15%", sm: "100%" },
-    height: "100%",
+    // padding: 2,
   },
   avatar: {
     background: "transparent",
