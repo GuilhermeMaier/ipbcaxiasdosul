@@ -34,7 +34,7 @@ export default function Footer() {
           {
             id: 1,
             role: "Presidente",
-            name: "Silvânio Matias",
+            name: "Rev. Silvânio Matias",
           },
           {
             id: 2,

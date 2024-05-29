@@ -26,6 +26,7 @@ export const footerStyles = SXStyleMaker({
       padding: 0,
       paddingLeft: 1,
       minHeight: "fit-content",
+      whiteSpace: "nowrap",
     },
   },
 });
