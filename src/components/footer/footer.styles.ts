@@ -1,4 +1,4 @@
-import { SXStyleMaker } from "@/app/styles/common.styles";
+import { SXStyleMaker } from "@/styles/common.styles";
 
 export const footerStyles = SXStyleMaker({
   avatarContainer: {
