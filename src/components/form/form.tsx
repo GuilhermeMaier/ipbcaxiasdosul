@@ -9,6 +9,7 @@ import { IMember, membersHeaders } from "./form.dto";
 function FormContent() {
   const [membros, setMembros] = useState<IMember[]>([]);
   const fetchMembers = async () => {
+    console.log("Fetching members");
     const response = await axios.get<IMember[]>("/members");
     setMembros(response.data);
   };
