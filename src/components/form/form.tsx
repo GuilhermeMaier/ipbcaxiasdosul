@@ -10,6 +10,10 @@ function FormContent() {
   const [membros, setMembros] = useState<IMember[]>([]);
 
   const fetchMembers = async () => {
+    console.log(
+      "process.env.NEXT_PUBLIC_API_URL",
+      process.env.NEXT_PUBLIC_API_URL
+    );
     const response = await axios.get<IMember[]>("/members");
     setMembros(response.data);
   };
