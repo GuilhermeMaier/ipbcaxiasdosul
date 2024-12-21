@@ -4,12 +4,12 @@ import axios from "@/utils/axiosRequester";
 import { Box, Table } from "@mui/joy";
 import { useEffect, useState } from "react";
 import { MdCheckCircle, MdRemove } from "react-icons/md";
-import { IMember, membersHeaders } from "./form.dto";
+import { IMember, membersHeaders } from "./dto/form.dto";
 
 function FormContent() {
   const [membros, setMembros] = useState<IMember[]>([]);
+
   const fetchMembers = async () => {
-    console.log("Fetching members");
     const response = await axios.get<IMember[]>("/members");
     setMembros(response.data);
   };
@@ -47,13 +47,14 @@ function FormContent() {
         </thead>
         <tbody>
           {membros.map((membro) => (
-            <tr key={membro.id}>
+            <tr key={membro.iCalvinusMemberID}>
               <td
                 align={
-                  membersHeaders.find((c) => c.id === "id")?.align || "left"
+                  membersHeaders.find((c) => c.id === "iCalvinusMemberID")
+                    ?.align || "left"
                 }
               >
-                {membro.id || (
+                {membro.iCalvinusMemberID || (
                   <IconHolder size="sm" color="neutral">
                     <MdRemove />
                   </IconHolder>

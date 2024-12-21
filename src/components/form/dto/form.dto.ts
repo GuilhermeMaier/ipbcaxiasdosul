@@ -3,21 +3,29 @@ import { CommonTableHeader } from "@/utils/typeUtils.dto";
 export type MemberStatus = "Não membro" | "Comungante" | "Não comungante";
 
 export interface IMember {
-  id: number;
+  _id: string;
+  iCalvinusMemberID: number;
   name: string;
   email: string;
   phone: string;
   cellphone: string;
-  status: MemberStatus;
+  status: string;
   enabled: boolean;
+  __v: number;
 }
 
 export const membersHeaders: CommonTableHeader<
   IMember,
-  "id" | "name" | "email" | "phone" | "cellphone" | "status" | "enabled"
+  | "iCalvinusMemberID"
+  | "name"
+  | "email"
+  | "phone"
+  | "cellphone"
+  | "status"
+  | "enabled"
 >[] = [
   {
-    id: "id",
+    id: "iCalvinusMemberID",
     headerName: "ID",
     align: "right",
     width: "75px",
